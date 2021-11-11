@@ -14,4 +14,8 @@ twitter = Twython(
 )
 
 def tweet(message):
-    twitter.update_status(status=message)
+    try:
+        twitter.update_status(status=message)
+        return True
+    except Exception as e:
+        raise Exception(e)
