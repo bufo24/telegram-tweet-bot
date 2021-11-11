@@ -1,6 +1,6 @@
 from twython import Twython
 
-from twitter_auth import (
+from auth import (
     consumer_key,
     consumer_secret,
     access_token,

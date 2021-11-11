@@ -1,6 +1,7 @@
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 from twitter import tweet
+from auth import token
 
 
 def tweetCommand(update: Update, context: CallbackContext) -> None:
@@ -9,7 +10,7 @@ def tweetCommand(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f'Tweeted: {message}')
 
 
-updater = Updater('2124765915:AAHh81Emvzca2OlneTiKpwzJELlDxO_MAjk')
+updater = Updater(token)
 
 updater.dispatcher.add_handler(CommandHandler('tweet', tweetCommand))
 
