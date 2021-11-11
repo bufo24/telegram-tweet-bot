@@ -1,16 +1,14 @@
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 from twitter import tweet
-from auth import token
+from config import token, admin_id
 import csv
 
-# define admin id
-admin = 289422913
 
 def tweet_command(update: Update, context: CallbackContext) -> None:
     admins = get_admins()
     sender = str(update.message.from_user.id)
-    if (admin == int(sender) or admins.__contains__(sender)):
+    if (admin_id == int(sender) or admins.__contains__(sender)):
         message = update.message.text.removeprefix("/tweet ")
         try: 
             tweet(message)
@@ -21,7 +19,7 @@ def tweet_command(update: Update, context: CallbackContext) -> None:
         update.message.reply_text("You are not authorized to use this command.")
 
 def add_command(update: Update, context: CallbackContext) -> None:
-    if (update.message.from_user.id == admin):
+    if (update.message.from_user.id == admin_id):
         message = update.message.text.removeprefix("/add ")
         f = open('users.csv','a')
         f.write(f'{message}\n')
