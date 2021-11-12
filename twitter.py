@@ -1,6 +1,6 @@
 from twython import Twython
 
-from auth import (
+from config import (
     consumer_key,
     consumer_secret,
     access_token,
