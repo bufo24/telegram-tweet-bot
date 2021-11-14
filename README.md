@@ -1,45 +1,39 @@
-## Requirements
+This Telegram bot is a simple gateway to Twitter. Using command `/tweet'
+generates a twitter message.
 
-- Python 3.9
 
-## Installation
+## Installation and configuration
 
-Clone the repository
-Install the Python modules:
+You will need Python version 3.9 or above.
 
+1. Clone the repository.
+2. Install the Python modules:
 ```
 pip install -r requirements.txt
 ```
-
-Make a copy of the example config:
-
+3. Make a copy of the example config:
 ```
 cp config.example.py config.py
 ```
+4. Contact @userinfobot on Telegram (https://t.me/userinfobot) to get your user
+   ID.
+5. Paste your user ID into config.py (`admin_id`).
+6. Obtain a Telegram API key for your bot:
+    - Contact Botfather on Telegram (https://t.me/Botfather)
+    - `/newbot`
+    - Follow instructions and take note of the API key and the bots name.
+6. Paste the API key in config.py (`token`).
+7. Create a Twitter developer account (https://developer.twitter.com/en/apply-for-access).
+In the Twitter developer dashboard:
+    - Create an app in the dashboard with read and write (!) permissions.
+    - Generate API key and an Access token.
+    - Enter those in config.py (`consumer_key` corresponds to the Twitter API key).
 
-Contact @userinfobot on Telegram to get your user id. (https://t.me/userinfobot)
+## Running the bot
+```
+python3 bot.py`
+```
 
-Copy ID to config.py as admin_id
-
-Obtain Telegram API key:
-
-- Contact botfather (@bot)
-- `/newbot`
-
-Paste token in config.py
-
-Create Twitter developer account
-(https://developer.twitter.com/en/apply-for-access)
-
-Create an app in the dashboard with read and write permissions
-
-Generate API key en Access token
-
-Enter those in config.py ('consumer_key' is the API key)
-
-To start the bot
-
-`python3 bot.py`
-
-Contact your bot with the handle chosen in Botfather and
-use `/add`, `/admins` en `/tweet`
+## Testing the bot
+Contact your bot (using the name chosen in Botfather) in Telegram and use commands `/add`, `/admins` and `/tweet`.
+Check contents of users.csv and output on Twitter.
