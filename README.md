@@ -31,7 +31,7 @@ In the Twitter developer dashboard:
 
 ## Running the bot
 ```
-python3 bot.py`
+python3 bot.py
 ```
 
 ## Testing the bot
